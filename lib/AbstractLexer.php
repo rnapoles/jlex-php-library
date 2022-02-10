@@ -12,8 +12,8 @@ abstract class AbstractLexer {
   const YY_NO_ANCHOR = 4;
   const YYEOF = -1;
 
-  const $YY_BOL;
-  const $YY_EOF;
+  const YY_BOL = -1;
+  const YY_EOF = -1;
 
   protected $yy_reader;
   protected $yy_buffer;
@@ -57,7 +57,7 @@ abstract class AbstractLexer {
   protected function yy_advance() {
     if ($this->yy_buffer_index < $this->yy_buffer_read) {
       if (!isset($this->yy_buffer[$this->yy_buffer_index])) {
-        return $this->YY_EOF;
+        return $this::YY_EOF;
       }
       return ord($this->yy_buffer[$this->yy_buffer_index++]);
     }
@@ -71,14 +71,14 @@ abstract class AbstractLexer {
       $this->yy_buffer_index = $j;
 
       $data = fread($this->yy_reader, 8192);
-      if ($data === false || !strlen($data)) return $this->YY_EOF;
+      if ($data === false || !strlen($data)) return $this::YY_EOF;
       $this->yy_buffer .= $data;
       $this->yy_buffer_read += strlen($data);
     }
 
     while ($this->yy_buffer_index >= $this->yy_buffer_read) {
       $data = fread($this->yy_reader, 8192);
-      if ($data === false || !strlen($data)) return $this->YY_EOF;
+      if ($data === false || !strlen($data)) return $this::YY_EOF;
       $this->yy_buffer .= $data;
       $this->yy_buffer_read += strlen($data);
     }
