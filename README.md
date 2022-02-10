@@ -58,3 +58,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [link-original]: https://github.com/wez/JLexPHP
 [link-jlex]: http://www.cs.princeton.edu/~appel/modern/java/JLex/
+[link-syntax]: http://www.cs.princeton.edu/~appel/modern/java/JLex/current/manual.html
