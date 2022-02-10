@@ -24,8 +24,10 @@
     }
   ],
   "minimum-stability": "dev",
-  "psr-4": {
-      "JLexPHP\\": "lib"
+  "autoload": {
+      "psr-4": {
+        "JLexPHP\\": "lib/"
+      }
   },
   "require-dev": {
 
