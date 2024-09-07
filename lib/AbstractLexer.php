@@ -2,6 +2,8 @@
 
 namespace JLexPHP;
 
+use Exception;
+
 abstract class AbstractLexer {
 
   const YY_F = -1;
@@ -142,10 +144,10 @@ abstract class AbstractLexer {
     return $this->yy_buffer_end - $this->yy_buffer_start;
   }
 
-  static $yy_error_string = array(
+  static $yy_error_string = [
     'INTERNAL' => "Error: internal error.\n",
     'MATCH' => "Error: Unmatched input.\n"
-  );
+  ];
 
   protected function yy_error($code, $fatal) {
     print self::$yy_error_string[$code];
