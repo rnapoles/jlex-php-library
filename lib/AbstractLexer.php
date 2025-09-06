@@ -135,7 +135,7 @@ abstract class AbstractLexer {
                  2029 /* unicode PS */ == $this->yy_buffer[$this->yy_buffer_end-1]);
   }
 
-  protected function yytext() {
+  public function yytext() {
     return substr($this->yy_buffer, $this->yy_buffer_start, 
           $this->yy_buffer_end - $this->yy_buffer_start);
   }

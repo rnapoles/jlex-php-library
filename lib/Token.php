@@ -8,6 +8,7 @@ class Token {
   public $col;
   public $value;
   public $type;
+  public $filename;
 
   function __construct($type, $value = null, $line = null, $col = null) {
     $this->line = $line;
